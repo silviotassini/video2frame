@@ -25,7 +25,7 @@ def vid2frame(video_file):
     show_video_metadata(meta)
     success, image = vidcap.read()
     count = 0
-    while not success:
+    while success:
         cv2.imwrite("frame%d.jpg" % count, image)
         success, image = vidcap.read()     
         if not success:
